@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Eventos - Estilo y Vanidad SA de CV</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: transparent;
+            justify-content: center;
+        }
+        .navbar-nav .nav-item {
+        margin-right: 20px; /* Aumenta la separación entre los elementos */
+    }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: #343a40;
+            font-size: 1.1rem;
+        }
+        .navbar-nav .dropdown-menu {
+            display: none;
+        }
+        .navbar-nav .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: rgb(215, 24, 104);
+        }
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .event-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .event-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .event-date {
+            background-color: rgb(215, 24, 104);
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .event-description {
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+            color: #343a40;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .back-button button {
+            
+            color: rgb(215, 24, 104);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .back-button button:hover {
+            background-color: rgb(180, 20, 90);
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .footer-text {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+        .event-list { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+        .event-card { width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; background: #fff; }
+        .event-card img { width: 100%; height: 200px; object-fit: cover; }
+        .event-date { font-weight: bold; margin: 10px 0; }
+        .event-description { padding: 0 10px 15px; }
+    </style>
+</head>
+<body>
+    <!-- Botón de Regresar -->
+    <div class="back-button">
+        <button onclick="history.back()">&larr;</button>
+    </div>
+    <!-- Título -->
+<div class="title">
+    <a href="../index.html" style="text-decoration: none; color: rgb(215, 24, 104);">
+        Estilo y Vanidad SA de CV
+    </a>
+</div>
+
+     <!-- Menú principal -->
+     <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-nav">
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </div>
+                <!-- Estructura -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Estructura EVSA</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="organigrama.html">Organigrama</a></li>
+                    </ul>
+                </div>
+                <!-- Nuestras Áreas -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="nuestrasAreas.html">Nuestras Áreas</a>
+                </div>
+                <!-- Eventos -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Eventos</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="listadoEventos.html">Listado de Eventos</a></li>
+                        <li><a class="dropdown-item" href="calendarioCum.html">Calendario de Cumpleaños EVSA</a></li>
+                    </ul>
+                </div>
+                <!-- Información Laboral -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Información Laboral</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="calendarioLaboral.html">Días de Asueto</a></li>
+                        <li><a class="dropdown-item" href="horariosTransporte.html">Horarios de Transporte</a></li>
+                        <li><a class="dropdown-item" href="vacantes.html">Vacantes Internas</a></li>
+                        <li><a class="dropdown-item" href="procesosRH.html">Procesos Recursos Humanos</a></li>
+                    </ul>
+                </div>
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="codigoConducta.html">Codigo de Conducta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título -->
+    <div class="title">Listado de Eventos</div>
+
+    <!-- Lista de eventos -->
+    <div class="event-list">
+        <div class="event-card">
+            <img src="../img/pan.jpeg" alt="Rosca de Reyes">
+            <div class="event-date">Todos los viernes</div>
+            <div class="event-description">Disfrutemos de un pan con café</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/jueves.webp" alt="Rosca de Reyes">
+            <div class="event-date">Ultimo jueves de cada mes</div>
+            <div class="event-description">Comedor nos tiene preparada una sorpresa en nuestro horario de comida</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/6ENERO.jpg" alt="Rosca de Reyes">
+            <div class="event-date">06 de enero</div>
+            <div class="event-description">Compartiremos rosca de reyes</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/tamales.jpeg" alt="Día de la Candelaria">
+            <div class="event-date">02 de febrero</div>
+            <div class="event-description">Comeremos tamales y un rico chocolate</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/14febrero.webp" alt="San Valentín">
+            <div class="event-date">14 de febrero</div>
+            <div class="event-description">Celebraremos la gratitud y la amistad con mensajes positivos</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/8marzo.webp" alt="Día de la Mujer">
+            <div class="event-date">08 de marzo</div>
+            <div class="event-description">Celebramos y reconocemos la labor de nuestras mujeres EVSA</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/30abril.webp" alt="Día del Niño">
+            <div class="event-date">30 de abril</div>
+            <div class="event-description">Visita de nuestros niños en planta</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/10mayo.webp" alt="Día de las Madres">
+            <div class="event-date">10 de mayo</div>
+            <div class="event-description">Celebramos y reconocemos la labor de nuestras Mamás EVSA</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/26mayo.webp" alt="Evento de Antigüedades">
+            <div class="event-date">26 de mayo</div>
+            <div class="event-description">Reconocemos a compañeros por sus años de servicio</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/11junio.webp" alt="Día contra el cáncer de próstata">
+            <div class="event-date">11 de junio</div>
+            <div class="event-description">Día de sensibilización vs cáncer de próstata</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/18junio.webp" alt="Día del Padre">
+            <div class="event-date">18 de junio</div>
+            <div class="event-description">Celebramos a nuestros Papás EVSA</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/1julio.webp" alt="Semana de la Salud y Seguridad">
+            <div class="event-date">01 al 12 de julio</div>
+            <div class="event-description">Programas de bienestar, salud y prevención en planta</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/15septiembre.jpeg" alt="Día de la Independencia">
+            <div class="event-date">15 de septiembre</div>
+            <div class="event-description">Celebremos que somos Mexicanos</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/voli.webp" alt="Torneo de Voleibol">
+            <div class="event-date">20 de septiembre</div>
+            <div class="event-description">Arrancamos con nuestro torneo</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/20octubre.webp" alt="Día contra el Cáncer de Mama">
+            <div class="event-date">19 de octubre</div>
+            <div class="event-description">Campaña de sensibilización vs el cáncer de mama</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/27octubre.jpeg" alt="2da Carrera EVSA">
+            <div class="event-date">27 de octubre</div>
+            <div class="event-description">Emociónate con la Carrera EVSA</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/1noviembre.webp" alt="Día de Muertos">
+            <div class="event-date">01 de noviembre</div>
+            <div class="event-description">Disfrutamos de un rico pan y un delicioso chocolate</div>
+        </div>
+        <div class="event-card">
+            <img src="../img/12diciembre.webp" alt="Fiesta de Fin de Año">
+            <div class="event-date">12 de diciembre</div>
+            <div class="event-description">Nuestra Fiesta de Fin de Año</div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../img/evsa.png" alt="Logo EVSA" class="footer-logo">
+            <p class="footer-text">© 2025 Estilo y Vanidad SA de CV</p>
+            <p class="footer-text">Ejido San José Iturbide, México</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

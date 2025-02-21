@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miembros - Estilo y Vanidad SA de CV</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(215, 24, 104);
+        }
+        .navbar {
+            background-color: transparent;
+            justify-content: center;
+        }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: #343a40;
+            font-size: 1.1rem;
+        }
+        .navbar-nav .dropdown-menu {
+            display: none;
+        }
+        .navbar-nav .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .back-button button {
+            color: rgb(215, 24, 104);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .back-button button:hover {
+            background-color: rgb(180, 20, 90);
+        }
+
+        /* Contenedor de tarjetas */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .person-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .person-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .person-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .person-card-body {
+            padding: 20px;
+        }
+        .person-card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .person-card-position {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin: 10px 0;
+        }
+        .person-card-info {
+            font-size: 1rem;
+            color: #343a40;
+            margin: 5px 0;
+        }
+        .person-card-info a {
+            text-decoration: none;
+            color: #6c757d;
+            transition: color 0.2s;
+        }
+        .person-card-info a:hover {
+            color: rgb(215, 24, 104);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón de Regresar -->
+    <div class="back-button">
+        <button onclick="history.back()">&larr;</button>
+    </div>
+
+    <!-- Título -->
+    <div class="title">Miembros de las Áreas</div>
+
+    <!-- Contenedor de tarjetas de personas -->
+    <div class="cards-container">
+        <div class="person-card">
+            <img src="../img/efren.JPG" alt="Persona 1">
+            <div class="person-card-body">
+                <div class="person-card-title">MENDOZA LÓPEZ EFRÉN ANDRÉS</div>
+                <div class="person-card-position">Gerente de Logística y Distribución</div>
+                <div class="person-card-info"><i class="fas fa-envelope"></i> <a href="mailto:efren.mendoza@evsacorp.com.mx">efren.mendoza@evsacorp.com.mx</a></div>
+                <div class="person-card-info"><i class="fas fa-phone"></i> <a href="tel:4538">4585</a></div>
+            </div>
+        </div>
+
+        <div class="person-card">
+            <img src="../img/alexis.JPG" alt="Persona 2">
+            <div class="person-card-body">
+                <div class="person-card-title">MIRANDA CASTRO JESUS ALEXIS</div>
+                <div class="person-card-position">Jefe Almacén de Materiales y MP</div>
+                <div class="person-card-info"><i class="fas fa-envelope"></i> <a href="mailto:alexis.miranda@evsacorp.com.mx">alexis.miranda@evsacorp.com.mx</a></div>
+                <div class="person-card-info"><i class="fas fa-phone"></i> <a href="tel:2004">2004</a></div>
+            </div>
+        </div>
+
+        <div class="person-card">
+            <img src="../img/danielI.JPG" alt="Persona 3">
+            <div class="person-card-body">
+                <div class="person-card-title">ISLAS GARCIA DANIEL</div>
+                <div class="person-card-position">Supervisor Mat.</div>
+                <div class="person-card-info"><i class="fas fa-envelope"></i> <a href="mailto:daniel.islas@evsacorp.com.mx">daniel.islas@evsacorp.com.mx</a></div>
+            </div>
+        </div>
+
+        <div class="person-card">
+            <img src="../img/martinL.JPG" alt="Persona 4">
+            <div class="person-card-body">
+                <div class="person-card-title">LÓPEZ ESTRELLA MARTIN</div>
+                <div class="person-card-position">Supervisor Recibo</div>
+                <div class="person-card-info"><i class="fas fa-envelope"></i> <a href="mailto:martin.lopez@evsacorp.com.mx">martin.lopez@evsacorp.com.mx</a></div>
+                <div class="person-card-info"><i class="fas fa-phone"></i> <a href="tel:4543">4543</a></div>
+            </div>
+        </div>
+
+        <div class="person-card">
+            <img src="../img/leyva.JPG" alt="Persona 5">
+            <div class="person-card-body">
+                <div class="person-card-title">LEYVA JIMENEZ ALBERTO</div>
+                <div class="person-card-position">Supervisor Inv.</div>
+                <div class="person-card-info"><i class="fas fa-envelope"></i> <a href="mailto:alberto.leyva@evsacorp.com.mx">alberto.leyva@evsacorp.com.mx</a></div>
+            </div>
+        </div>
+
+        <div class="person-card">
+            <img src="../img/hector.jpg" alt="Persona 6">
+            <div class="person-card-body">
+                <div class="person-card-title">ALVAREZ JUAREZ HECTOR</div>
+                <div class="person-card-position">Supervisor Mat</div>
+                <div class="person-card-info"><i class="fas fa-envelope"></i> <a href="mailto:hector.alvarez@evsacorp.com.mx">hector.alvarez@evsacorp.com.mx</a></div>
+                <div class="person-card-info"><i class="fas fa-phone"></i> <a href="tel:4538">4422</a></div>
+            </div>
+        </div>
+
+        <!-- Agrega más tarjetas de personas aquí si lo necesitas -->
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

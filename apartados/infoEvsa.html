@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo y Vanidad SA de CV</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome Icons -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(215, 24, 104);
+        }
+        .navbar {
+            background-color: transparent;
+            justify-content: center;
+        }
+        .navbar-nav .nav-item {
+        margin-right: 20px; /* Aumenta la separación entre los elementos */
+    }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: #343a40;
+            font-size: 1.1rem;
+        }
+        .navbar-nav .dropdown-menu {
+            display: none;
+        }
+        .navbar-nav .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-nav .nav-item {
+                margin-bottom: 10px;
+            }
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(215, 24, 104);
+        }
+        .container {
+            padding-top: 40px;
+        }
+        .section-content {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .section-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .section-text {
+            flex: 1;
+        }
+        .section-text h4 {
+            font-size: 1.75rem;
+            color: rgb(38, 55, 79);
+            font-weight: bold;
+        }
+        .section-text p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .back-button button {
+            
+            color: rgb(215, 24, 104);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .back-button button:hover {
+            background-color: rgb(180, 20, 90);
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .footer-text {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón de Regresar -->
+    <div class="back-button">
+        <button onclick="history.back()">&larr;</button>
+    </div>
+    <!-- Título -->
+    <div class="title">
+        <a href="../index.html" style="text-decoration: none; color: rgb(215, 24, 104);">
+            Estilo y Vanidad SA de CV
+        </a>
+    </div>
+
+    <!-- Menú principal -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-nav">
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </div>
+                <!-- Estructura -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Estructura EVSA</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="organigrama.html">Organigrama</a></li>
+                    </ul>
+                </div>
+                <!-- Nuestras Áreas -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="nuestrasAreas.html">Nuestras Áreas</a>
+                </div>
+                <!-- Eventos -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Eventos</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="listadoEventos.html">Listado de Eventos</a></li>
+                        <li><a class="dropdown-item" href="calendarioCum.html">Calendario de Cumpleaños EVSA</a></li>
+                    </ul>
+                </div>
+                <!-- Información Laboral -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Información Laboral</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="calendarioLaboral.html">Días de Asueto</a></li>
+                        <li><a class="dropdown-item" href="horariosTransporte.html">Horarios de Transporte</a></li>
+                        <li><a class="dropdown-item" href="vacantes.html">Vacantes Internas</a></li>
+                        <li><a class="dropdown-item" href="procesosRH.html">Procesos Recursos Humanos</a></li>
+                    </ul>
+                </div>
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="codigoConducta.html">Codigo de Conducta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título -->
+    <div class="section-title">
+        Información EVSA
+    </div>
+
+    <!-- Sección 1: Política de Calidad -->
+    <div class="container">
+        <div class="section-content">
+            <img src="../img/G5.jpg" alt="Política de Calidad" class="col-md-4 col-12">
+            <div class="section-text">
+                <h4><main>Misión</main></h4>
+                <p>Es política de EVSA cumplir con los más altos estándares de Calidad en sus productos, procesos y servicios, mismos que deberán exceder las expectativas de nuestros clientes, proveedores y socios de negocios. Ofrecemos productos de la más alta calidad a través de una cultura de mejoramiento continuo que está soportada en nuestros valores de: Liderazgo, Trabajo en Equipo y Alto desempeño. Estamos comprometidos con la mejora continua del sistema de gestión de calidad, buscando siempre mejorar los costos operativos para lograr un liderazgo competitivo en la industria del cuidado personal y del hogar.</p>
+            </div>
+        </div>
+
+        <!-- Sección 2: Visión -->
+        <div class="section-content">
+            <img src="../img/G6.JPG" alt="Visión" class="col-md-4 col-12">
+            <div class="section-text">
+                <h4>Visión</h4>
+                <p>En Estilo y Vanidad S.A. de C.V. estamos comprometidos a prevenir la contaminación ambiental derivada de nuestras actividades de fabricación de productos higiénicos, limpieza, perfumería y cosméticos a través de: Cumplir con los requisitos legales aplicables así como los requisitos propios definidos por la misma organización. Evaluar el impacto ambiental de nuestras actividades y mitigar los Aspectos Ambientales Significativos. Promover mejoras a nivel organizacional en favor del Medio Ambiente. Todo lo anterior constituye nuestra visión y guía para establecer los objetivos y las metas ambientales que nos ayuden a mejorar de manera continua nuestro desempeño ambiental.</p>
+            </div>
+        </div>
+
+        <!-- Sección 3: Objetivos -->
+        <div class="section-content">
+            <img src="../img/G8.JPG" alt="Visión" class="col-md-4 col-12">
+            <div class="section-text">
+                <h4>Objetivos</h4>
+                <ul>
+                    <li>Empresa rentable: Rentabilidad del 5% mínimo mensual Incremento de ventas (unidades) 5% anual</li>
+                    <li>Incremento en capacidad de planta en 10% anuak : Mejorar el nivel de servicio al 95% mínimo mensual</li>
+                    <li>Desarrollar e implementar un programa de evaluación de desempeño 1Q : Mecanismo de comunicación efectiva 1Q, todas las áreas con al menos otro depto</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../img/evsa.png" alt="Logo EVSA" class="footer-logo">
+            <p class="footer-text">© 2025 Estilo y Vanidad SA de CV</p>
+            <p class="footer-text">Ejido San José Iturbide, México</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

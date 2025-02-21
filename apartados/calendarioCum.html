@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Cumpleaños</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .calendar-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .calendar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #d71868;
+            color: white;
+        }
+        .calendar-header h3 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .calendar-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .calendar-header button:hover {
+            transform: scale(1.2);
+        }
+        .calendar {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 15px;
+        }
+        .calendar div {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .calendar .day-header {
+            font-weight: bold;
+            color: #d71868;
+        }
+        .calendar .day {
+            background-color: #f2f2f2;
+        }
+        .calendar .day:hover {
+            background-color: #d71868;
+            color: white;
+            transform: scale(1.1);
+        }
+        .calendar .day.current {
+            background-color: #d71868;
+            color: white;
+            font-weight: bold;
+        }
+        .calendar .day.birthday {
+            background-color: #ffd700;
+            color: black;
+            font-weight: bold;
+        }
+        .modal-content {
+            text-align: center;
+            padding: 20px;
+        }
+        .modal-content h5 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .modal-content img {
+            width: 150px;
+            height: 150px;
+        }
+        /* Estilos para el menú */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(215, 24, 104);
+        }
+        .navbar {
+            background-color: transparent;
+            justify-content: center;
+        }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-nav .nav-item {
+        margin-right: 20px; /* Aumenta la separación entre los elementos */
+    }
+        .navbar-nav .nav-item .nav-link {
+            color: #343a40;
+            font-size: 1.1rem;
+        }
+        .navbar-nav .dropdown-menu {
+            display: none;
+        }
+        .navbar-nav .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-nav .nav-item {
+                margin-bottom: 10px;
+            }
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .back-button button {
+            
+            color: rgb(215, 24, 104);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .back-button button:hover {
+            background-color: rgb(180, 20, 90);
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .footer-text {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón de Regresar -->
+    <div class="back-button">
+        <button onclick="history.back()">&larr;</button>
+    </div>
+    
+    <!-- Título -->
+<div class="title">
+    <a href="../index.html" style="text-decoration: none; color: rgb(215, 24, 104);">
+        Estilo y Vanidad SA de CV
+    </a>
+</div>
+    <!-- Menú principal -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-nav">
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </div>
+                <!-- Estructura -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Estructura EVSA</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="organigrama.html">Organigrama</a></li>
+                    </ul>
+                </div>
+                <!-- Nuestras Áreas -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="nuestrasAreas.html">Nuestras Áreas</a>
+                </div>
+                <!-- Eventos -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Eventos</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="listadoEventos.html">Listado de Eventos</a></li>
+                        <li><a class="dropdown-item" href="calendarioCum.html">Calendario de Cumpleaños EVSA</a></li>
+                    </ul>
+                </div>
+                <!-- Información Laboral -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Información Laboral</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="calendarioLaboral.html">Días de Asueto</a></li>
+                        <li><a class="dropdown-item" href="horariosTransporte.html">Horarios de Transporte</a></li>
+                        <li><a class="dropdown-item" href="vacantes.html">Vacantes Internas</a></li>
+                        <li><a class="dropdown-item" href="procesosRH.html">Procesos Recursos Humanos</a></li>
+                    </ul>
+                </div>
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="codigoConducta.html">Codigo de Conducta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- Título -->
+<div class="title">Calendario de Cumpleaños</div>
+
+    <!-- Contenedor del calendario -->
+    <div class="calendar-container">
+        <!-- Encabezado del calendario -->
+        <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <h3 id="month-title"></h3>
+            <button id="next-month">&gt;</button>
+        </div>
+        <!-- Días del calendario -->
+        <div class="calendar" id="calendar"></div>
+    </div>
+
+    <!-- Modal para mostrar cumpleaños -->
+    <div class="modal fade" id="birthdayModal" tabindex="-1" aria-labelledby="birthdayModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <h5 id="birthdayModalLabel"></h5>
+                <img src="../img/cumpleaños.png" alt="Celebración de Cumpleaños" style="width: 150px; margin: 10px auto; display: block;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="../img/evsa.png" alt="Logo EVSA" class="footer-logo">
+            <p class="footer-text">© 2025 Estilo y Vanidad SA de CV</p>
+            <p class="footer-text">Ejido San José Iturbide, México</p>
+        </div>
+    </footer>
+
+    <script>
+        const calendar = document.getElementById('calendar');
+        const monthTitle = document.getElementById('month-title');
+        const prevMonthButton = document.getElementById('prev-month');
+        const nextMonthButton = document.getElementById('next-month');
+
+        // Cumpleaños
+        const birthdays = {
+    "2025-02-01": "María del Rosario Ibarra Sánchez y Wendy Dolores Martinez Hurtado",
+    "2025-02-02": "Alberto Leyva Jiménez",
+    "2025-02-05": "José Felipe Villegas Pérez",
+    "2025-02-07": "Guillermina López Sánchez y Héctor Álvarez Juárez",
+    "2025-02-08": "Daniel Sánchez Hernández",
+    "2025-02-09": "José Juan López Vargas",
+    "2025-02-11": "Ramón Baeza Arriaga",
+    "2025-02-12": "Laura Clemencia Rodríguez Morales y Maricela Conde Baeza",
+    "2025-02-17": "Hernán Francisco Oaxaca Bravo",
+    "2025-02-18": "Mariana Rico Pacheco",
+    "2025-02-22": "Juan José González Loeza",
+    "2025-02-23": "Martha Leticia Martínez Ramírez y José Guadalupe Cardenas Baeza",
+    "2025-02-25": "María Sebastiana González Muñoz",
+    "2025-02-27": "Santos Gabriel Salinas Hernandez",
+    "2025-02-28": "Juan Antonio Sotelo Mata y José Antonio Mares Rodríguez",
+    "2025-03-04": "Luis Daniel Alamilla Frias",
+    "2025-03-05": "José Guadalupe Trejo Estrada y Adrian Conejo Blanco",
+    "2025-03-06": "José Felix Rivera González",
+    "2025-03-07": "Maria Dolores Morales De La Vega",
+    "2025-03-08": "J Rafael Quintero García",
+    "2025-03-10": "Janet Delgado Mendoza",
+    "2025-03-11": "Sandra Angélica Hernández Hernández",
+    "2025-03-17": "María Guadalupe Pacheco Davila",
+    "2025-03-18": "Manuel Alfonso Hernández Cano",
+    "2025-03-21": "Esperanza López De la Vega y Dora Alicia Morales López",
+    "2025-03-23": "Brenda Marisol Cerón López",
+    "2025-03-25": "Jhoan Ivan Caballero Lopez y Eduardo Mendez Lopez",
+    "2025-03-26": "EMMANUEL GARCIA DE LEON",
+    "2025-03-27": "María de Lourdes Miranda Valdovinos",
+    "2025-03-29": "Miguel Angel Casas Alvarado y Ana Caren Morales Ceron",
+    "2025-03-30": "Leticia Estela Uribe Trujillo",
+    "2025-03-31": "Benjamin Romero Madrid",
+    "2025-04-02": "Ofelia González Muñoz",
+    "2025-04-06": "Gabriel Eduardo López Colin",
+    "2025-04-11": "Ma. Dolores López Delgado",
+    "2025-04-12": "Jesús Sotelo Mendoza",
+    "2025-04-15": "Teresa Luna Hurtado, José Jesús Martínez Muñoz, J. Rubén Resendiz Pacheco y Anita Díaz Rivera",
+    "2025-04-18": "MARIA OLGA RODRIGUEZ ALAMILLA y José Alberto Escamilla Morales",
+    "2025-04-25": "Esperanza Olvera Oviedo",
+    "2025-04-27": "Maria Loreto Trejo Martinez y José Carlos Díaz Contreras",
+    "2025-04-28": "Román Baeza Camacho",
+    "2025-04-29": "Ramiro Pegueros Gómez y Mayra Conde Baeza",
+    "2025-05-01": "José Asunción De la Vega Lugo",
+    "2025-05-03": "Daniela Valeria Sanchez Mata y Jonathan Zamudio Zamudio",
+    "2025-05-05": "Amparo Barro Trejo",
+    "2025-05-07": "Gisela Morín Medina y María de la Luz Conde Baeza",
+    "2025-05-08": "Fernando Mendez Arredondo",
+    "2025-05-09": "Jennyfer Pegueros Ontiveros",
+    "2025-05-10": "Marta Icela Rodriguez Tapia",
+    "2025-05-15": "J. Isidro Flores Tellez",
+    "2025-05-17": "DIANA EMMA RIVERA JAQUES y María Guadalupe De la Vega Galván",
+    "2025-05-19": "Carrie De la Vega Gutiérrez",
+    "2025-05-21": "Crescencio González Martínez",
+    "2025-05-23": "Moises Ramírez Paramo y José Miguel González Ramírez",
+    "2025-05-25": "Cesar Daniel Servin Corona y Maria Felipa Ramirez Ponce",
+    "2025-05-28": "Agustín Pérez González",
+    "2025-05-29": "Maximino Baeza Bertadillo",
+    "2025-06-01": "Alberto Méndoza Rodríguez y Salvador Mendoza Espinoza",
+    "2025-06-02": "Jesús Lozano Morgado",
+    "2025-06-04": "José Oscar Caballero Alcaya",
+    "2025-06-05": "Roberto Ramos Rojas y Fernando Alvarez Arvizú",
+    "2025-06-08": "Erica Elizabeth Cerón López",
+    "2025-06-10": "María Jesús Juárez Lugo",
+    "2025-06-12": "Gisela Robles Ruíz",
+    "2025-06-15": "Daniela Conejo Manning",
+    "2025-06-18": "Marco Antonio Alamilla Ayala",
+    "2025-06-19": "Juan Carlos García Rojas y DANIEL ISLAS GARCIA",
+    "2025-06-21": "Juan Luis Reyes Reséndiz y Rodolfo Buenrostro Pérez",
+    "2025-06-23": "Vicente Garcia Medina",
+    "2025-06-24": "Juana del Carmen Rico Pacheco",
+    "2025-06-25": "María del Rosario Olvera Suárez",
+    "2025-06-28": "Saúl Pegueros Gómez",
+    "2025-07-01": "Roberto López Gómez, Abel Baeza Alvarado, Ma. Guadalupe De la Vega Zuñiga",
+    "2025-07-02": "Maximino Cortes Ramirez",
+    "2025-07-05": "Maria Guadalupe Resendiz Loredo",
+    "2025-07-06": "Jesús Fernando Duarte Espinoza",
+    "2025-07-08": "Abraham García Servin",
+    "2025-07-10": "José Antonio González Rivera",
+    "2025-07-16": "María Carmen Ramírez Moya",
+    "2025-07-21": "J. Santos González Ramírez",
+    "2025-07-23": "Omar González Pérez",
+    "2025-07-25": "Zeltzin Montserrat Sanchez Martínez",
+    "2025-07-26": "Claudia María Bazaldúa Loredo",
+    "2025-07-28": "Víctor Puentes Ramos, Norma Mares Orduña, Sinai Montserrat Hernández García",
+    "2025-07-30": "Julissa Pacheco Estrada",
+    "2025-08-02": "Fara Grace de Los Angeles Gutiérrez Orozco",
+    "2025-08-03": "María Lidia Espinoza Hernández, Rodolfo Javier Aguilar Banda",
+    "2025-08-04": "Jesus Ivan Mendoza Galvan",
+    "2025-08-05": "Javier Figueroa Borrayes",
+    "2025-08-06": "Carlos Francisco Rojas García",
+    "2025-08-08": "Francisco Domingo Rubio Olvera",
+    "2025-08-15": "Omar Mares Orduña",
+    "2025-08-16": "Cesar Mares Orduña",
+    "2025-08-18": "Juan Daniel Cortes Guerrero",
+    "2025-08-20": "Efren Andrés Mendoza López",
+    "2025-08-22": "Mónica Trejo López",
+    "2025-08-23": "Jacobo Israel Rivas Cortés",
+    "2025-08-25": "Mariela Martinez Marina",
+    "2025-08-26": "Praxedis Rodríguez Salinas",
+    "2025-08-29": "Katya Aranda Pérez, Domingo Rubio Pérez, Angelica Rodríguez Suaste",
+    "2025-08-30": "José Luis Herrera Arredondo",
+    "2025-08-31": "Benjamin Arvizú Martínez, Rufina Orduña Urbina, Jaime Alberto Aguilera Terrats, David Alvarado Hernandez",
+    "2025-09-01": "María Magdalena Martínez Sánchez",
+    "2025-09-02": "Felipe Sosa Galvan, Ma. Olga Lopez Esquivel",
+    "2025-09-04": "Rosa Isela Morales Salazar",
+    "2025-09-06": "Ma. Guadalupe González Bertadillo",
+    "2025-09-07": "Leonardo Valdovinos Sanchez",
+    "2025-09-09": "Ma. Guadalupe Bautista Granados",
+    "2025-09-11": "Yessenia Rodriguez Gonzalez",
+    "2025-09-13": "Hermenegildo Peña Vargas, María Vargas Rivera",
+    "2025-09-14": "Pedro Humberto Hernandez Arvizu",
+    "2025-09-15": "José Arturo Angeles Zamora",
+    "2025-09-16": "Rogelio Gómez Rico",
+    "2025-09-18": "Jorge de Jesus Perez Mendez",
+    "2025-09-20": "Jose Reyes Ramirez Ramirez, Jorge Hernández Rodríguez",
+    "2025-09-21": "Jaqueline Zagala López",
+    "2025-09-23": "Ana Veronica Guerrero Rodriguez",
+    "2025-09-29": "Miguel Angel Baeza Hernández",
+    "2025-10-02": "Andres Gabino Hernández Renteral, Raquel Guzman Salazar",
+    "2025-10-03": "María Francisca González Muñoz",
+    "2025-10-04": "Francisco Medina Frias",
+    "2025-10-08": "Jose Manuel Gonzalez Figueroa, Juan Orduña Villegas, José Alfredo Jiménez Mejía",
+    "2025-10-09": "Maria Lourdes Ledesma Olvera, Vicente Cano Rosales",
+    "2025-10-10": "Jesús Humberto Frias Villafranco",
+    "2025-10-11": "Ana Rosa Acosta Aguilar, Zenaida Alvarez García",
+    "2025-10-13": "Eduardo Tavares Arana",
+    "2025-10-14": "Aylin America Lechuga Soto, José Armando Gutiérrez Guerrero",
+    "2025-10-15": "Edith Arellano Yañez, Elizabeth Valenzuela Banda",
+    "2025-10-17": "Paola Carolina Salgado Martínez",
+    "2025-10-18": "Jesus Alexis Miranda Castro",
+    "2025-10-19": "Laura Villaseñor Buenrostro",
+    "2025-10-20": "Martin Molinero Salazar",
+    "2025-10-21": "Cecilia Arredondo Ledesma",
+    "2025-10-25": "Armando Gutiérrez Rios",
+    "2025-10-26": "Juan Carlos Cordova López",
+    "2025-10-29": "Cenobio Cerón Galvan",
+    "2025-11-01": "Antonio González Díaz",
+    "2025-11-02": "Natalia Lizeth Arellano Fabian",
+    "2025-11-05": "Elsa Trejo López, Janeht Guadalupe Melendez Velazquez, Jazmin Jissel Basaldua Bolaños",
+    "2025-11-09": "Julio Linares Rojas",
+    "2025-11-10": "Maria Dolores Olvera Suarez",
+    "2025-11-12": "Remedios Antonio Amador Arvizu",
+    "2025-11-14": "Karla Lizbeth Flores Gonzalez",
+    "2025-11-16": "María de Jesus Mendoza Pegueros",
+    "2025-11-17": "Martín Sánchez Robles",
+    "2025-11-18": "Gabriel Perez Salinas",
+    "2025-11-20": "Maria Felix Gonzalez Muñoz",
+    "2025-11-22": "Policarpo Loredo Sanchez, Cecilia Salazar Casas",
+    "2025-11-25": "Gabriela Refugio Aguado Rivera, Diego Emmanuel Cardenas Baeza",
+    "2025-11-27": "José Andrés Pérez Sánchez, Jovani Resendiz Perez",
+    "2025-11-28": "Juana María Bolaños Hernández, Ma. Guadalupe Espinoza Hernández",
+    "2025-11-29": "Rebeca Garcia Morales, Valentina Rojas Trejo",
+    "2025-11-30": "Ethel Minerva Caballero Robles",
+    "2025-12-04": "Maurilio Soto Rangel",
+    "2025-12-05": "Juan Francisco Vargas Gonzalez",
+    "2025-12-09": "Ana Lidia Conde Baeza, Ana Silvia Aguilar Montalvo, Irma Soto Soto",
+    "2025-12-10": "VICTOR OLASCOAGA SORIA",
+    "2025-12-12": "Martín López Estrella",
+    "2025-12-14": "Juana María Galvan Gutiérrez",
+    "2025-12-15": "Carla Edith Peña Miron",
+    "2025-12-17": "Miguel Eduardo Camberos Hurtado, Genaro Espino Elias",
+    "2025-12-20": "Agustín Villegas Herrera, María Dolores Resendiz Pacheco",
+    "2025-12-21": "Arturo González Gómez",
+    "2025-12-22": "Saúl Rodríguez Camacho",
+    "2025-12-25": "José Manuel Yañez Carrillo, Lucía Galvan Hurtado",
+    "2025-12-27": "Gloria Rico Pacheco",
+    "2025-12-28": "Virginia Baeza Rodríguez",
+    "2025-12-31": "Juan Francisco Guerrero Olvera"
+};
+
+
+
+        
+
+        // Fecha actual
+        const today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+
+        function generateCalendar(month, year) {
+            calendar.innerHTML = ''; // Limpia el calendario
+            const firstDay = new Date(year, month, 1).getDay(); // Día inicial
+            const daysInMonth = new Date(year, month + 1, 0).getDate(); // Días del mes
+            const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+
+            // Título del mes
+            const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            monthTitle.textContent = `${monthNames[month]} ${year}`;
+
+            // Encabezados de los días
+            dayNames.forEach(day => {
+                const dayHeader = document.createElement('div');
+                dayHeader.classList.add('day-header');
+                dayHeader.textContent = day;
+                calendar.appendChild(dayHeader);
+            });
+
+            // Días vacíos antes del primer día del mes
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                calendar.appendChild(emptyDay);
+            }
+
+            // Días del mes
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(year, month, day);
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('day');
+                dayElement.textContent = day;
+
+                // Resaltar día actual
+                if (date.toDateString() === today.toDateString()) {
+                    dayElement.classList.add('current');
+                }
+
+                // Resaltar cumpleaños
+                const dateString = date.toISOString().split('T')[0];
+                if (birthdays[dateString]) {
+                    dayElement.classList.add('birthday');
+                    dayElement.addEventListener('click', () => {
+                        const modalTitle = document.getElementById('birthdayModalLabel');
+                        modalTitle.textContent = `¡Feliz cumpleaños, ${birthdays[dateString]}!`;
+                        const modal = new bootstrap.Modal(document.getElementById('birthdayModal'));
+                        modal.show();
+                    });
+                }
+
+                calendar.appendChild(dayElement);
+            }
+        }
+
+        // Navegación de meses
+        prevMonthButton.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar(currentMonth, currentYear);
+        });
+
+        nextMonthButton.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        });
+
+        // Generar el calendario inicial
+        generateCalendar(currentMonth, currentYear);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

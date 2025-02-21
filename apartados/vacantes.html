@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo y Vanidad SA de CV</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> <!-- Font Awesome Icons -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(215, 24, 104);
+        }
+        .navbar {
+            background-color: transparent;
+            justify-content: center;
+        }
+        .navbar-nav .nav-item {
+        margin-right: 20px; /* Aumenta la separación entre los elementos */
+    }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-nav .nav-item .nav-link {
+            color: #343a40;
+            font-size: 1.1rem;
+        }
+        .navbar-nav .dropdown-menu {
+            display: none;
+        }
+        .navbar-nav .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-nav .nav-item {
+                margin-bottom: 10px;
+            }
+        }
+        .vacancy-card {
+      border: 1px solid #007bff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .vacancy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .vacancy-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .vacancy-description {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .apply-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .apply-btn:hover {
+      background-color: #218838;
+    }
+    .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .back-button button {
+            
+            color: rgb(215, 24, 104);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .back-button button:hover {
+            background-color: rgb(180, 20, 90);
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .footer-text {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+  <!-- Botón de Regresar -->
+  <div class="back-button">
+    <button onclick="history.back()">&larr;</button>
+</div>
+
+    <!-- Título -->
+    <div class="title">
+        <a href="../index.html" style="text-decoration: none; color: rgb(215, 24, 104);">
+            Estilo y Vanidad SA de CV
+        </a>
+    </div>
+
+    <!-- Menú principal -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-nav">
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </div>
+                <!-- Estructura -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Estructura EVSA</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="organigrama.html">Organigrama</a></li>
+                    </ul>
+                </div>
+                <!-- Nuestras Áreas -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="nuestrasAreas.html">Nuestras Áreas</a>
+                </div>
+                <!-- Eventos -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Eventos</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="listadoEventos.html">Listado de Eventos</a></li>
+                        <li><a class="dropdown-item" href="calendarioCum.html">Calendario de Cumpleaños EVSA</a></li>
+                    </ul>
+                </div>
+                <!-- Información Laboral -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Información Laboral</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="calendarioLaboral.html">Días de Asueto</a></li>
+                        <li><a class="dropdown-item" href="horariosTransporte.html">Horarios de Transporte</a></li>
+                        <li><a class="dropdown-item" href="vacantes.html">Vacantes Internas</a></li>
+                        <li><a class="dropdown-item" href="procesosRH.html">Procesos Recursos Humanos</a></li>
+                    </ul>
+                </div>
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="codigoConducta.html">Codigo de Conducta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- Título -->
+<div class="title">Vacantes Internas</div>
+
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+    
+          <!-- Vacante 1 -->
+          <div class="col">
+            <div class="card vacancy-card">
+              <div class="card-body">
+                <h5 class="vacancy-title">Supervisor de Envasado</h5>
+                <p class="text-muted">Funciones Principales: 
+                    <br>
+                    - Asegurar el programa de envasado hora por hora
+                    <br>
+                    - Gestionar eficientemente los recursos humanos y materiales del área
+                    <br>
+                    - Cumplir con el Sistema de Gestión de Calidad
+                    <br>
+                    - Gestionar asegurar el mantenimiento preventivo y correctivo</p>
+                <p class="text-muted">Requerimientos:
+                    <br>
+                    - Ingeniería Industrial, QFB o afín (Necesario contar con cédula)
+                    <br>
+                    - Conocimientos técnicos en: BPM'S, interpretación del plan de producción
+                    <br>
+                    - Manejo de Excel
+                </p>
+                <button class="apply-btn" onclick="sendEmail('Desarrollador Backend')">Aplicar</button>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+      <!-- Pie de página -->
+      <footer class="footer">
+        <div class="footer-content">
+            <img src="../img/evsa.png" alt="Logo EVSA" class="footer-logo">
+            <p class="footer-text">© 2025 Estilo y Vanidad SA de CV</p>
+            <p class="footer-text">Ejido San José Iturbide, México</p>
+        </div>
+    </footer>
+    
+    <script>
+        function sendEmail(position) {
+            const email = 'karla.flores@evsacorp.com.mx';
+            const subject = `Aplicación para ${position}`;
+            const body = `Estimado/a, me gustaría postularme para el puesto de ${position}.`;
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones - Estilo y Vanidad SA de CV</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(215, 24, 104);
+        }
+        .navbar {
+            background-color: transparent;
+            justify-content: center;
+        }
+        .navbar-nav .nav-item {
+            margin-right: 20px; /* Aumenta la separación entre los elementos */
+        }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-nav .nav-item .nav-link,
+        .dropdown-menu .dropdown-item,
+        .area-card a {
+            text-decoration: none;
+            color: inherit; /* Mantiene el color original del texto */
+        }
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1.1rem;
+            color: #343a40;
+        }
+        .navbar-nav .dropdown-menu {
+            display: none;
+        }
+        .navbar-nav .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        .areas-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .area-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 300px;
+            text-align: center;
+            margin: 10px;
+        }
+        .area-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .area-card img {
+            width: 100%;
+            height: 300px; /* Aumentar altura de las imágenes */
+            object-fit: cover;
+        }
+        .area-card-title {
+            padding: 15px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #343a40;
+        }
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            .navbar-nav .nav-item {
+                margin-bottom: 10px;
+            }
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        .back-button button {
+            color: rgb(215, 24, 104);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .back-button button:hover {
+            background-color: rgb(180, 20, 90);
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón de Regresar -->
+    <div class="back-button">
+        <button onclick="history.back()">&larr;</button>
+    </div>
+    <!-- Título -->
+    <div class="title">Operaciones</div>
+
+     <!-- Menú principal -->
+     <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-nav">
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </div>
+                <!-- Estructura -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Estructura EVSA</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="organigrama.html">Organigrama</a></li>
+                    </ul>
+                </div>
+                <!-- Nuestras Áreas -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="nuestrasAreas.html">Nuestras Áreas</a>
+                </div>
+                <!-- Eventos -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Eventos</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="listadoEventos.html">Listado de Eventos</a></li>
+                        <li><a class="dropdown-item" href="calendarioCum.html">Calendario de Cumpleaños EVSA</a></li>
+                    </ul>
+                </div>
+                <!-- Información Laboral -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#">Información Laboral</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="calendarioLaboral.html">Días de Asueto</a></li>
+                        <li><a class="dropdown-item" href="horariosTransporte.html">Horarios de Transporte</a></li>
+                        <li><a class="dropdown-item" href="vacantes.html">Vacantes Internas</a></li>
+                        <li><a class="dropdown-item" href="procesosRH.html">Procesos Recursos Humanos</a></li>
+                    </ul>
+                </div>
+                <!-- Inicio -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="codigoConducta.html">Codigo de Conducta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor de áreas en Operaciones -->
+    <div class="areas-container">
+        <div class="area-card">
+            <a href="personalMantenimiento.html">
+                <img src="../img/AM.JPG" alt="Mantenimiento">
+                <div class="area-card-title">Mantenimiento</div>
+            </a>
+        </div>
+        <div class="area-card">
+            <a href="personalIngenieria.html">
+                <img src="../img/ING.jpeg" alt="Ingeniería">
+                <div class="area-card-title">Ingeniería</div>
+            </a>
+        </div>
+        <div class="area-card">
+            <a href="serviciosNA.html">
+                <img src="../img/mantenimiento.webp" alt="Ingeniería">
+                <div class="area-card-title">Servicios</div>
+            </a>
+        </div>
+        <div class="area-card">
+            <a href="personalProduccion.html">
+                <img src="../img/AMP.JPG" alt="Producción">
+                <div class="area-card-title">Producción</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
