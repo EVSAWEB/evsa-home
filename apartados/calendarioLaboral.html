@@ -157,6 +157,25 @@
             font-size: 1rem;
             margin: 5px 0;
         }
+        .calendar-legend {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.legend-circle {
+    width: 15px;
+    height: 15px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
     </style>
 </head>
 <body>
@@ -215,9 +234,16 @@
             </div>
         </div>
     </nav>
+    
 
     <!-- Título -->
 <div class="title">Calendario de Laboral</div>
+<div class="calendar-container">
+    <!-- Leyenda para los días de asueto -->
+    <div class="calendar-legend">
+        <span class="legend-circle"></span>
+        <span>Días de asueto</span>
+    </div>
 
     <div class="calendar-container">
         <div class="calendar-header">
@@ -236,7 +262,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Pie de página -->
     <footer class="footer">
         <div class="footer-content">
